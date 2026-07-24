@@ -7566,194 +7566,1413 @@
 </section>
 
 
-    <!-- ========================================
-         FOOTER
-    ========================================= -->
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="footer__top">
-
-                <!-- Marca -->
-                <div class="footer__brand">
-
-                    <a
-                        href="#inicio"
-                        class="footer__logo"
-                        aria-label="Nóbrega Turismo - Página inicial"
-                    >
-                        <img
-                            src="assets/images/logo-nobrega-turismo.png"
-                            alt="Logo Nóbrega Turismo"
-                            width="180"
-                            height="60"
-                            loading="lazy"
-                        >
-                    </a>
-
-                    <p>
-                        Transformando planos de viagem em experiências
-                        marcantes, com atendimento personalizado e cuidado
-                        em cada detalhe.
-                    </p>
+ /* =========================================================
+   FASE 13 — FOOTER PREMIUM
+   ========================================================= */
 
 
-                    <div class="footer__social">
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-                        <a
-                            href="https://www.instagram.com/nobrega.turismo/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Instagram da Nóbrega Turismo"
-                        >
-                            Instagram
-                        </a>
+.footer {
 
-                        <a
-                            href="https://wa.me/5500000000000"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="WhatsApp da Nóbrega Turismo"
-                        >
-                            WhatsApp
-                        </a>
+    position: relative;
 
-                    </div>
+    isolation: isolate;
 
-                </div>
+    overflow: hidden;
 
+    background:
 
-                <!-- Navegação -->
-                <div class="footer__column">
+        linear-gradient(
+            145deg,
+            #031f29 0%,
+            #063b4b 52%,
+            #052d3a 100%
+        );
 
-                    <h3>Navegação</h3>
+    color: var(--white);
 
-                    <ul>
-                        <li>
-                            <a href="#inicio">Início</a>
-                        </li>
-
-                        <li>
-                            <a href="#sobre">Sobre</a>
-                        </li>
-
-                        <li>
-                            <a href="#servicos">Serviços</a>
-                        </li>
-
-                        <li>
-                            <a href="#destinos">Destinos</a>
-                        </li>
-
-                        <li>
-                            <a href="#depoimentos">Depoimentos</a>
-                        </li>
-                    </ul>
-
-                </div>
+}
 
 
-                <!-- Serviços -->
-                <div class="footer__column">
+.footer::before {
 
-                    <h3>Serviços</h3>
+    content: "";
 
-                    <ul>
-                        <li>
-                            <a href="#servicos">Passagens aéreas</a>
-                        </li>
+    position: absolute;
 
-                        <li>
-                            <a href="#servicos">Hospedagens</a>
-                        </li>
+    inset: 0;
 
-                        <li>
-                            <a href="#servicos">Pacotes completos</a>
-                        </li>
+    z-index: -2;
 
-                        <li>
-                            <a href="#servicos">Seguro viagem</a>
-                        </li>
+    opacity: 0.08;
 
-                        <li>
-                            <a href="#servicos">Roteiros personalizados</a>
-                        </li>
-                    </ul>
+    background-image:
 
-                </div>
+        linear-gradient(
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        ),
 
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        );
 
-                <!-- Contato -->
-                <div class="footer__column">
+    background-size: 70px 70px;
 
-                    <h3>Atendimento</h3>
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
 
-                    <ul class="footer__contact-list">
-
-                        <li>
-                            <span>Instagram</span>
-
-                            <a
-                                href="https://www.instagram.com/nobrega.turismo/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                @nobrega.turismo
-                            </a>
-                        </li>
-
-                        <li>
-                            <span>WhatsApp</span>
-
-                            <a
-                                href="https://wa.me/5500000000000"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Falar com a equipe
-                            </a>
-                        </li>
-
-                        <li>
-                            <span>E-mail</span>
-
-                            <a href="mailto:contato@nobregaturismo.com.br">
-                                contato@nobregaturismo.com.br
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-
-            </div>
+}
 
 
-            <div class="footer__bottom">
+.footer__decoration {
 
-                <p>
-                    © <span id="currentYear">2026</span>
-                    Nóbrega Turismo. Todos os direitos reservados.
-                </p>
+    position: absolute;
+
+    z-index: -1;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(130px);
+
+}
 
 
-                <div class="footer__legal">
+.footer__decoration--one {
 
-                    <a href="#">
-                        Política de Privacidade
-                    </a>
+    top: -220px;
 
-                    <a href="#">
-                        Termos de Uso
-                    </a>
+    left: -200px;
 
-                </div>
+    width: 520px;
 
-            </div>
+    height: 520px;
 
-        </div>
+    background: rgba(80, 196, 214, 0.16);
 
-    </footer>
+}
+
+
+.footer__decoration--two {
+
+    right: -220px;
+
+    bottom: 80px;
+
+    width: 520px;
+
+    height: 520px;
+
+    background: rgba(242, 169, 59, 0.12);
+
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.footer__main {
+
+    padding: 85px 0 60px;
+
+}
+
+
+.footer__grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(260px, 1.35fr)
+        minmax(150px, 0.7fr)
+        minmax(170px, 0.75fr)
+        minmax(240px, 1fr);
+
+    gap: 55px;
+
+}
+
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.footer__logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 24px;
+
+    color: var(--white);
+
+}
+
+
+.footer__logo-symbol {
+
+    display: grid;
+
+    width: 54px;
+
+    height: 54px;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 17px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 255, 255, 0.06)
+        );
+
+    color: var(--secondary);
+
+    font-family: var(--font-heading);
+
+    font-size: 1.55rem;
+
+    font-weight: 800;
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.footer__logo-content strong,
+.footer__logo-content small {
+
+    display: block;
+
+}
+
+
+.footer__logo-content strong {
+
+    color: var(--white);
+
+    font-family: var(--font-heading);
+
+    font-size: 1.25rem;
+
+    line-height: 1;
+
+}
+
+
+.footer__logo-content small {
+
+    margin-top: 5px;
+
+    color: var(--secondary);
+
+    font-size: 0.6rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.22em;
+
+    text-transform: uppercase;
+
+}
+
+
+.footer__description {
+
+    max-width: 390px;
+
+    margin-bottom: 24px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 0.74rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   REDES SOCIAIS
+   ========================================================= */
+
+.footer__socials {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.footer__socials a {
+
+    display: grid;
+
+    width: 43px;
+
+    height: 43px;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: rgba(255, 255, 255, 0.8);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        background var(--transition-normal),
+        color var(--transition-normal);
+
+}
+
+
+.footer__socials a:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(242, 169, 59, 0.45);
+
+    background: var(--secondary);
+
+    color: var(--primary-dark);
+
+}
+
+
+/* =========================================================
+   AVALIAÇÃO
+   ========================================================= */
+
+.footer__rating {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    max-width: 350px;
+
+    padding: 15px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+}
+
+
+.footer__rating-stars {
+
+    min-width: max-content;
+
+    color: var(--secondary);
+
+    font-size: 0.66rem;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+.footer__rating strong,
+.footer__rating span {
+
+    display: block;
+
+}
+
+
+.footer__rating strong {
+
+    margin-bottom: 3px;
+
+    color: var(--white);
+
+    font-size: 0.67rem;
+
+}
+
+
+.footer__rating span {
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 0.56rem;
+
+}
+
+
+/* =========================================================
+   COLUNAS
+   ========================================================= */
+
+.footer__column-label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--secondary);
+
+    font-size: 0.58rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+}
+
+
+.footer__column h3 {
+
+    margin-bottom: 22px;
+
+    color: var(--white);
+
+    font-size: 1rem;
+
+}
+
+
+.footer__links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.footer__links a {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding-left: 15px;
+
+    color: rgba(255, 255, 255, 0.56);
+
+    font-size: 0.68rem;
+
+    transition:
+        padding-left var(--transition-normal),
+        color var(--transition-normal);
+
+}
+
+
+.footer__links a::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: rgba(242, 169, 59, 0.65);
+
+    transition:
+        transform var(--transition-normal),
+        background var(--transition-normal);
+
+}
+
+
+.footer__links a:hover {
+
+    padding-left: 20px;
+
+    color: var(--white);
+
+}
+
+
+.footer__links a:hover::before {
+
+    transform: scale(1.4);
+
+    background: var(--secondary);
+
+}
+
+
+/* =========================================================
+   CONTATO
+   ========================================================= */
+
+.footer__contact-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+
+.footer__contact-list li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+}
+
+
+.footer__contact-icon {
+
+    display: grid;
+
+    width: 36px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, 0.065);
+
+    color: var(--secondary);
+
+    font-size: 0.75rem;
+
+}
+
+
+.footer__contact-list small,
+.footer__contact-list a,
+.footer__contact-list address,
+.footer__contact-list div > span {
+
+    display: block;
+
+}
+
+
+.footer__contact-list small {
+
+    margin-bottom: 3px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 0.55rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+
+}
+
+
+.footer__contact-list a,
+.footer__contact-list address,
+.footer__contact-list div > span {
+
+    color: rgba(255, 255, 255, 0.66);
+
+    font-size: 0.64rem;
+
+    font-style: normal;
+
+    line-height: 1.55;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+.footer__contact-list a {
+
+    transition: color var(--transition-normal);
+
+}
+
+
+.footer__contact-list a:hover {
+
+    color: var(--secondary);
+
+}
+
+
+/* =========================================================
+   NEWSLETTER
+   ========================================================= */
+
+.footer__newsletter {
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.035);
+
+}
+
+
+.footer__newsletter-wrapper {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.75fr);
+
+    align-items: center;
+
+    gap: 50px;
+
+    padding: 34px 0;
+
+}
+
+
+.footer__newsletter-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+}
+
+
+.footer__newsletter-icon {
+
+    display: grid;
+
+    width: 57px;
+
+    height: 57px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--secondary);
+
+    font-size: 1.2rem;
+
+}
+
+
+.footer__newsletter-content span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--secondary);
+
+    font-size: 0.57rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+}
+
+
+.footer__newsletter-content h3 {
+
+    margin-bottom: 5px;
+
+    color: var(--white);
+
+    font-size: 1rem;
+
+}
+
+
+.footer__newsletter-content p {
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.64rem;
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO NEWSLETTER
+   ========================================================= */
+
+.footer-newsletter-form {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    gap: 10px;
+
+}
+
+
+.footer-newsletter-form__field {
+
+    position: relative;
+
+}
+
+
+.footer-newsletter-form__field span {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 16px;
+
+    color: var(--secondary);
+
+    font-size: 0.75rem;
+
+    pointer-events: none;
+
+    transform: translateY(-50%);
+
+}
+
+
+.footer-newsletter-form__field input {
+
+    width: 100%;
+
+    height: 51px;
+
+    padding: 0 16px 0 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-size: 0.68rem;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        border-color var(--transition-normal),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+
+.footer-newsletter-form__field input::placeholder {
+
+    color: rgba(255, 255, 255, 0.38);
+
+}
+
+
+.footer-newsletter-form__field input:focus {
+
+    border-color: rgba(242, 169, 59, 0.5);
+
+    background: rgba(255, 255, 255, 0.11);
+
+    box-shadow:
+        0 0 0 4px rgba(242, 169, 59, 0.08);
+
+}
+
+
+.footer-newsletter-form__button {
+
+    display: inline-flex;
+
+    min-width: max-content;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    height: 51px;
+
+    padding: 0 21px;
+
+    border: 0;
+
+    border-radius: 14px;
+
+    background: var(--secondary);
+
+    color: var(--primary-dark);
+
+    font-family: inherit;
+
+    font-size: 0.67rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition-normal),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+
+.footer-newsletter-form__button:hover {
+
+    transform: translateY(-3px);
+
+    background: #ffbd58;
+
+    box-shadow:
+        0 15px 30px rgba(242, 169, 59, 0.2);
+
+}
+
+
+/* =========================================================
+   SELOS DE CONFIANÇA
+   ========================================================= */
+
+.footer__trust {
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.footer__trust-wrapper {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+}
+
+
+.footer__trust-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 23px 18px;
+
+}
+
+
+.footer__trust-item:not(:last-child)::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 25%;
+
+    right: 0;
+
+    width: 1px;
+
+    height: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+}
+
+
+.footer__trust-item > span {
+
+    display: grid;
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    font-size: 0.95rem;
+
+}
+
+
+.footer__trust-item strong,
+.footer__trust-item small {
+
+    display: block;
+
+}
+
+
+.footer__trust-item strong {
+
+    margin-bottom: 3px;
+
+    color: var(--white);
+
+    font-size: 0.65rem;
+
+}
+
+
+.footer__trust-item small {
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 0.53rem;
+
+}
+
+
+/* =========================================================
+   RODAPÉ INFERIOR
+   ========================================================= */
+
+.footer__bottom {
+
+    padding: 24px 0;
+
+    background: rgba(0, 0, 0, 0.11);
+
+}
+
+
+.footer__bottom-wrapper {
+
+    display: grid;
+
+    grid-template-columns: 1fr auto 1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.footer__bottom p {
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 0.58rem;
+
+}
+
+
+.footer__legal-links {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+}
+
+
+.footer__legal-links a {
+
+    color: rgba(255, 255, 255, 0.46);
+
+    font-size: 0.56rem;
+
+    transition: color var(--transition-normal);
+
+}
+
+
+.footer__legal-links a:hover {
+
+    color: var(--secondary);
+
+}
+
+
+.footer__credits {
+
+    text-align: right;
+
+}
+
+
+.footer__credits a {
+
+    color: var(--secondary);
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR AO TOPO
+   ========================================================= */
+
+.back-to-top {
+
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    z-index: 900;
+
+    display: grid;
+
+    width: 47px;
+
+    height: 47px;
+
+    place-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 15px;
+
+    background: var(--primary);
+
+    box-shadow:
+        0 15px 35px rgba(7, 63, 79, 0.25);
+
+    color: var(--white);
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity var(--transition-normal),
+        visibility var(--transition-normal),
+        transform var(--transition-normal),
+        background var(--transition-normal);
+
+}
+
+
+.back-to-top.is-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+.back-to-top:hover {
+
+    background: var(--secondary);
+
+    color: var(--primary-dark);
+
+}
+
+
+/* =========================================================
+   CLASSE DE ACESSIBILIDADE
+   ========================================================= */
+
+.sr-only {
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .footer__grid {
+
+        grid-template-columns:
+            minmax(260px, 1.3fr)
+            repeat(2, minmax(160px, 0.7fr));
+
+    }
+
+
+    .footer__contact {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+    .footer__contact-list {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+
+    }
+
+
+    .footer__newsletter-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .footer-newsletter-form {
+
+        max-width: 650px;
+
+    }
+
+
+    .footer__trust-wrapper {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .footer__trust-item:nth-child(2)::after {
+
+        display: none;
+
+    }
+
+
+    .footer__trust-item:nth-child(-n + 2) {
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    }
+
+
+    .footer__bottom-wrapper {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+
+    .footer__credits {
+
+        text-align: center;
+
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .footer__main {
+
+        padding: 70px 0 50px;
+
+    }
+
+
+    .footer__grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 45px 30px;
+
+    }
+
+
+    .footer__brand {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+    .footer__contact {
+
+        grid-column: 1 / -1;
+
+    }
+
+
+    .footer__legal-links {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .footer__grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer__brand,
+    .footer__contact {
+
+        grid-column: auto;
+
+    }
+
+
+    .footer__contact-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer-newsletter-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer-newsletter-form__button {
+
+        width: 100%;
+
+    }
+
+
+    .footer__trust-wrapper {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .footer__trust-item {
+
+        justify-content: flex-start;
+
+    }
+
+
+    .footer__trust-item:not(:last-child)::after {
+
+        top: auto;
+
+        right: 10%;
+
+        bottom: 0;
+
+        left: 10%;
+
+        width: 80%;
+
+        height: 1px;
+
+    }
+
+
+    .footer__trust-item:nth-child(2)::after {
+
+        display: block;
+
+    }
+
+
+    .footer__trust-item:nth-child(-n + 2) {
+
+        border-bottom: 0;
+
+    }
+
+
+    .footer__newsletter-content {
+
+        align-items: flex-start;
+
+    }
+
+
+    .back-to-top {
+
+        right: 16px;
+
+        bottom: 16px;
+
+        width: 44px;
+
+        height: 44px;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .footer__newsletter-content {
+
+        flex-direction: column;
+
+    }
+
+
+    .footer__rating {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOVIMENTO REDUZIDO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer__socials a,
+    .footer__links a,
+    .footer__legal-links a,
+    .footer-newsletter-form__button,
+    .back-to-top {
+
+        transition: none;
+
+    }
+
+
+    .footer__socials a:hover,
+    .footer-newsletter-form__button:hover {
+
+        transform: none;
+
+    }
+
+}   
 
 
     <!-- ========================================
