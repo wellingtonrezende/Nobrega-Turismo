@@ -9311,7 +9311,125 @@
 
 
     <!-- JavaScript -->
-    <script src="script.js" defer></script>
+<!-- ======================================================
+     SEGURANÇA DO LOADER
+======================================================= -->
+<script>
+    (function () {
+
+        let loaderLiberado = false;
+
+        function liberarSite() {
+
+            if (loaderLiberado) {
+                return;
+            }
+
+            loaderLiberado = true;
+
+            const loader = document.getElementById("pageLoader");
+
+            document.body.classList.remove("is-loading");
+            document.body.classList.add("page-loaded");
+
+            if (!loader) {
+                return;
+            }
+
+            loader.classList.add("is-hidden");
+
+            setTimeout(function () {
+
+                if (loader.parentNode) {
+                    loader.remove();
+                }
+
+            }, 600);
+
+        }
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                setTimeout(liberarSite, 800);
+
+            },
+            { once: true }
+        );
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                setTimeout(liberarSite, 300);
+
+            },
+            { once: true }
+        );
+
+        /*
+         * Segurança máxima:
+         * libera o site mesmo que alguma imagem ou fonte falhe.
+         */
+        setTimeout(liberarSite, 2500);
+
+    })();
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const loader =
+            document.getElementById("pageLoader");
+
+        document.body.classList.remove("is-loading");
+        document.body.classList.add("page-loaded");
+
+        document
+            .querySelectorAll(
+                ".reveal, .reveal-up, .reveal-left, .reveal-right"
+            )
+            .forEach(function (elemento) {
+                elemento.classList.add("is-visible");
+            });
+
+        if (loader) {
+
+            setTimeout(function () {
+
+                loader.classList.add("is-hidden");
+
+                setTimeout(function () {
+                    loader.remove();
+                }, 600);
+
+            }, 800);
+
+        }
+
+    });
+
+    setTimeout(function () {
+
+        const loader =
+            document.getElementById("pageLoader");
+
+        if (loader) {
+            loader.classList.add("is-hidden");
+        }
+
+        document.body.classList.remove("is-loading");
+
+    }, 2500);
+
+    
+</script>
+
+
+<!-- JavaScript principal -->
+<script src="script.js" defer></script>
 
 </body>
 </html>
+ 
+</html>
+    

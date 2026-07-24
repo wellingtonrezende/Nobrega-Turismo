@@ -148,49 +148,112 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
 /* =========================================================
-   LOADER
+   LOADER CORRIGIDO
 ========================================================= */
 
 function initializeLoader() {
 
     const loader =
-        select(".loader") ||
-        select("#loader") ||
+        select(".page-loader") ||
+        select("#pageLoader") ||
         select("[data-loader]");
+
+
+    const hideLoader = () => {
+
+        document.body.classList.remove("is-loading");
+        document.body.classList.add("page-loaded");
+
+
+        if (!loader) {
+
+            showRevealElements();
+
+            return;
+
+        }
+
+
+        loader.classList.add("is-hidden");
+
+
+        showRevealElements();
+
+
+        setTimeout(() => {
+
+            if (loader.parentNode) {
+
+                loader.remove();
+
+            }
+
+        }, SITE_CONFIG.loaderDuration);
+
+    };
+
+
+    /*
+     * Garante que os elementos animados não
+     * permaneçam invisíveis caso ocorra algum erro.
+     */
+
+    const showRevealElements = () => {
+
+        selectAll(
+            ".reveal, .reveal-up, .reveal-left, .reveal-right, [data-reveal]"
+        ).forEach((element) => {
+
+            element.classList.add("is-visible");
+
+        });
+
+    };
+
 
     if (!loader) {
 
-        document.body.classList.add("page-loaded");
+        hideLoader();
 
         return;
 
     }
 
+
     document.body.classList.add("is-loading");
 
 
-    window.addEventListener("load", () => {
+    /*
+     * Se a página já terminou de carregar.
+     */
 
-        setTimeout(() => {
+    if (document.readyState === "complete") {
 
-            loader.classList.add("is-hidden");
+        setTimeout(hideLoader, 400);
 
-            document.body.classList.remove("is-loading");
+    } else {
 
-            document.body.classList.add("page-loaded");
+        window.addEventListener(
+            "load",
+            () => {
+
+                setTimeout(hideLoader, 400);
+
+            },
+            { once: true }
+        );
+
+    }
 
 
-            setTimeout(() => {
+    /*
+     * Segurança máxima:
+     * libera o site mesmo se uma imagem, fonte
+     * ou iframe não terminar de carregar.
+     */
 
-                loader.remove();
-
-            }, SITE_CONFIG.loaderDuration);
-
-        }, 350);
-
-    });
+    setTimeout(hideLoader, 2500);
 
 }
 
@@ -708,9 +771,10 @@ function initializeDestinationFilters() {
                     "all";
 
                 const categories =
-                    category
-                        .split(",")
-                        .map((item) => item.trim());
+    category
+        .split(/[\s,]+/)
+        .map((item) => item.trim())
+        .filter(Boolean);
 
 
                 const shouldShow =
