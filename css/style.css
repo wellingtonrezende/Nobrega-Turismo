@@ -19112,3 +19112,286 @@ p {
     }
 
 }
+
+/* =========================================================
+   FASE 15 — SEO, ACESSIBILIDADE E PERFORMANCE
+========================================================= */
+
+
+/* =========================================================
+   LINK PARA PULAR O MENU
+========================================================= */
+
+.skip-link {
+
+    position: fixed;
+
+    top: 12px;
+
+    left: 12px;
+
+    z-index: 99999;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    background: var(--primary-dark);
+
+    color: var(--white);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(-150%);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.skip-link:focus {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   FOCO VISÍVEL
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+
+    outline: 3px solid rgba(242, 169, 59, 0.65);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================================
+   SELEÇÃO DE TEXTO
+========================================================= */
+
+::selection {
+
+    background: var(--primary);
+
+    color: var(--white);
+
+}
+
+
+/* =========================================================
+   MELHORIA DE RENDERIZAÇÃO
+========================================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+    text-rendering: optimizeLegibility;
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+img,
+picture,
+video,
+svg {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+img {
+
+    height: auto;
+
+}
+
+
+/* Evita que imagens sem dimensão causem saltos */
+
+.destination-card img,
+.testimonial-card img,
+.about img,
+.hero img {
+
+    aspect-ratio: var(--image-ratio, auto);
+
+    object-fit: cover;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO FORA DA TELA
+========================================================= */
+
+.services,
+.destinations,
+.differentials,
+.process,
+.testimonials,
+.faq,
+.contact {
+
+    content-visibility: auto;
+
+    contain-intrinsic-size: 1px 900px;
+
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+========================================================= */
+
+input,
+select,
+textarea,
+button {
+
+    font: inherit;
+
+}
+
+
+button,
+select {
+
+    cursor: pointer;
+
+}
+
+
+button:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.65;
+
+}
+
+
+/* =========================================================
+   CONTRASTE FORÇADO
+========================================================= */
+
+@media (forced-colors: active) {
+
+    a,
+    button,
+    input,
+    select,
+    textarea {
+
+        forced-color-adjust: auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOVIMENTO REDUZIDO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   IMPRESSÃO
+========================================================= */
+
+@media print {
+
+    .header,
+    .footer,
+    .loader,
+    .back-to-top,
+    .whatsapp-float,
+    .contact-form,
+    .conversion-form {
+
+        display: none !important;
+
+    }
+
+
+    body {
+
+        background: #ffffff;
+
+        color: #000000;
+
+    }
+
+
+    a {
+
+        color: #000000;
+
+        text-decoration: underline;
+
+    }
+
+}
